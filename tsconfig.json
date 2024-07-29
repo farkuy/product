@@ -1,0 +1,24 @@
+{
+  "compilerOptions": {
+    // Куда производим сборку
+    "outDir": "./dist/",
+    // Показывает все места, где ну указали тип
+    "noImplicitAny": true,
+    "module": "ESNext",
+    "target": "es5",
+    "jsx": "react",
+    // Обрабатываем не ток ts но js
+    "allowJs": true,
+    "moduleResolution": "node",
+    // Для абсолютного импорта
+    "baseUrl": ".",
+    // позволяет работатать с пакетами которые используют common.js как с обычными пакетами
+    "esModuleInterop": true,
+    "allowSyntheticDefaultImports": true
+  },
+  "ts-node": {
+    "compilerOptions": {
+      "module": "CommonJS"
+    }
+  }
+}
