@@ -19,7 +19,7 @@ export function buildWebpackConfig(options: BuildOptions): webpack.Configuration
         },
         plugins: buildPlugins(options), // используется для добавления различных плагинов: Оптимизация сборки, Генерация HTML-файлов, Обработка ошибок и предупреждений
         module: {
-            rules: buildLoaders(), // в rules конфигурируем лодеры ( любая обработка файлов, которая выходит за js )
+            rules: buildLoaders(options), // в rules конфигурируем лодеры ( любая обработка файлов, которая выходит за js )
         },
         resolve: buildResolvers(), // задаем расширение, дял которых мы не будем указывать расширения
         devtool: isDev ? 'inline-source-map' : undefined,
