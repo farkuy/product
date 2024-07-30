@@ -6,7 +6,7 @@
     "noImplicitAny": true,
     "module": "ESNext",
     "target": "es5",
-    "jsx": "react",
+    "jsx": "react-jsx",
     // Обрабатываем не ток ts но js
     "allowJs": true,
     "moduleResolution": "node",
