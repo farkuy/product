@@ -21,7 +21,7 @@ export function buildWebpackConfig(options: BuildOptions): webpack.Configuration
         module: {
             rules: buildLoaders(options), // в rules конфигурируем лодеры ( любая обработка файлов, которая выходит за js )
         },
-        resolve: buildResolvers(), // задаем расширение, дял которых мы не будем указывать расширения
+        resolve: buildResolvers(options), // задаем расширение, дял которых мы не будем указывать расширения
         devtool: isDev ? 'inline-source-map' : undefined,
         devServer: isDev ? buildDevServer(options) : undefined,
     }
