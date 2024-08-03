@@ -4,7 +4,7 @@ import {BuildOptions} from "./types/config";
 
 export function buildResolvers(options: BuildOptions): ResolveOptions {
     return {
-        extensions: ['.tsx', '.ts', '.js'], // задаем расширение, дял которых мы не будем указывать расширения
+        extensions: ['.tsx', '.ts', '.js'], // задаем расширение, для которых мы не будем указывать расширения
         preferAbsolute: true,
         modules: [options.paths.src, 'node_modules'],
         mainFields: ['index'],
