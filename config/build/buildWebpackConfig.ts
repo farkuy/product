@@ -1,27 +1,27 @@
 import {BuildOptions} from "./types/config";
 import webpack from "webpack";
+import path from "path";
 import {buildPlugins} from "./buildPlugins";
 import {buildLoaders} from "./buildLoaders";
 import {buildResolvers} from "./buildResolvers";
 import {buildDevServer} from "./buildDevServer";
 
-
 export function buildWebpackConfig(options: BuildOptions): webpack.Configuration {
-    const { mode, paths, isDev} = options
+    const {paths, mode, isDev} = options;
+
     return {
-        mode: mode,
-        entry: paths.entry, // entry - стартовая точка приложения
-        //output настойка того, как и куда мы будем делать сборку приложения
+        mode,
+        entry: paths.entry,
         output: {
-            filename: "[name].[contenthash].js", //название глав файл сборки
-            path: paths.build, // путь куда сборка будет происходить
-            clean: true, // чистим старые файлы при запуске вебпака
+            filename: "[name].[contenthash].js",
+            path: paths.build,
+            clean: true,
         },
-        plugins: buildPlugins(options), // используется для добавления различных плагинов: Оптимизация сборки, Генерация HTML-файлов, Обработка ошибок и предупреждений
+        plugins: buildPlugins(options),
         module: {
-            rules: buildLoaders(options), // в rules конфигурируем лодеры ( любая обработка файлов, которая выходит за js )
+            rules: buildLoaders(options)
         },
-        resolve: buildResolvers(options), // задаем расширение, дял которых мы не будем указывать расширения
+        resolve: buildResolvers(options),
         devtool: isDev ? 'inline-source-map' : undefined,
         devServer: isDev ? buildDevServer(options) : undefined,
     }
