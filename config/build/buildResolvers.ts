@@ -4,6 +4,10 @@ import {BuildOptions} from "./types/config";
 
 export function buildResolvers(options: BuildOptions): ResolveOptions {
     return {
+        fallback: {
+            "events": require.resolve("events/"),
+            "html-entities": require.resolve("html-entities"),
+        },
         extensions: ['.tsx', '.ts', '.js'], // задаем расширение, для которых мы не будем указывать расширения
         preferAbsolute: true,
         modules: [options.paths.src, 'node_modules'],
