@@ -4,5 +4,7 @@
   "Главная страница": "Main page",
   "Язык": "English",
   "Загрузка": "Loading...",
-  "Страница не найдена": "Page not found"
+  "Страница не найдена": "Page not found",
+  "Произошла непредвиденная ошибка": "There was an unforeseen error",
+  "Обновить страницу": "Refresh page"
 }
